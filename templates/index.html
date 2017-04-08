@@ -1,6 +1,87 @@
+<!DOCTYPE html5>
 <html>
 
-    <body>
-        "Temp HTML file"
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <title>FitFinder</title>
+</head>
+
+<body>
+
+    <!--FitFinder-->
+    <div display:"inline-block">
+      <img src="images/FitFinderLogo.png" width="30%" height="10%">
+    </div>
+
+    <!---User Image + Dropdown-->
+    <div class="dropdown">
+          <img src="images/img_avatar2.png" width="15%" heigth="5%" border: "3px solid white">
+        <div class="dropdown-content">
+            <a href="#">Account Info</a>
+            <a href="#">Preferences</a>
+            <a onclick="document.getElementById('id01').style.display='block'">Log Out</a>
+        </div>
+    </div>
+
+    <!--Caption Motto-->
+    <p align="left">The Perfect Fit To Get Fit</p>
+
+    <!--Sectionalizing Top from Bodt-->
+    <p style="clear: left">
+        <hr>
+    </p>
+
+    <!--Photo-->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="img1.jpg" style="width:70%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!--Bio Box-->
+    <div class="biobox">
+        Fill Me!
+    </div>
+
+    <!--Sectionalizing Bottom from Body-->
+    <p style="clear: left">
+        <hr>
+    </p>
+
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <center><img src="images\img_avatar2.png" alt="Avatar" class="avatar" width=20%></center>
+            </div>
+
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!--Importing JS Script-->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
