@@ -19,7 +19,8 @@ body {
 
 /*Logo Style*/
 .logo {
-  
+  position: relative;
+  display: inline-block;
 }
 
 /*Drop Down Menu*/
@@ -35,9 +36,16 @@ body {
 
 .dropdown {
     position: relative;
-    right: 0;
-    padding: 25;
+    padding: 25px;
     display: inline-block;
+}
+
+.dropdownLoggedIn{
+  display: inline-block;
+}
+
+.dropdownLoggedOff{
+  display: none;
 }
 
 .dropdown-content {
@@ -125,7 +133,7 @@ body {
 
 /*Bio Styling*/
 .biobox {
-  height:70%;
+  height:89%;
   width:35%;
   overflow:auto;
   border:3px solid white;
@@ -174,6 +182,7 @@ img.avatar {
 
 .container {
     padding: 16px;
+    color: black;
 }
 
 span.psw {
@@ -245,4 +254,11 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
+}
+
+/*Account Settings Page*/
+input[type=number] {
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
 }

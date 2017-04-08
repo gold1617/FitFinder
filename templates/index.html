@@ -4,23 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css')  }}" type="text/css">
+    <link rel="stylesheet" href="../static/css/layout.css" type="text/css">
     <title>FitFinder</title>
 </head>
 
-<bodyme=>
+<body>
 
     <!--FitFinder-->
-    <div display:"inline-block">
-        <img src="{{url_for('static', filename='images/FitFinderLogo.png')}}" width="30%" height="10%">
+    <div class="logo">
+        <!--<img src="{{url_for('static', filename='images/FitFinderLogo.png')}}" width="30%" height="10%">-->
+        <img src="../static/images/FitFinderLogo.png" width="30%" height="15%" >
     </div>
 
     <!---User Image + Dropdown-->
     <div class="dropdown">
-          <img src="images/img_avatar2.png" width="15%" heigth="5%" border: "3px solid white">
+        <!--<img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="15%" height="5%" border: "3px solid white" >-->
+        <img src="../static/images/img_avatar2.png" width="10%" border-radius:"50%">
         <div class="dropdown-content">
-            <a href="#">Account Info</a>
-            <a href="#">Preferences</a>
-            <a onclick="document.getElementById('id01').style.display='block'">Log Out</a>
+            <div class="dropdownLoggedIn">
+                <a onclick="document.getElementById('id02').style.display='block'">Account Info</a>
+                <a onclick="document.getElementById('id03').style.display='block'">Preferences</a>
+                <a onclick="document.getElementById('id01').style.display='block'">Log Out</a>
+            </div>
+            <div class="dropdownLoggedOff">
+                <a onclick="document.getElementById('id01').style.display='block'">Log In</a>
+            </div>
         </div>
     </div>
 
@@ -59,7 +67,9 @@
         <!-- Modal Content -->
         <form class="modal-content animate" action="/action_page.php">
             <div class="imgcontainer">
-                <center><img src="images\img_avatar2.png" alt="Avatar" class="avatar" width=20%></center>
+                <center><!--<img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="20%" alt="Avatar class=""avatar>-->
+                  <img src="../static/images/img_avatar2.png" alt="Avatar" class="avatar" width=20%>
+                </center>
             </div>
 
             <div class="container">
@@ -80,8 +90,89 @@
         </form>
     </div>
 
-    <!--Importing JS Script-->
-    <script type="text/javascript" src="script.js"></script>
+    <!--Account Info-->
+    <!-- The Modal -->
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+              <center>
+                  Account Info
+              </center>
+              <p style="clear: left">
+                  <hr>
+              </p>
+                <label><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" required>
+
+                <label><b>Age</b></label>
+                <p style="clear: left">
+                    <input type="number" placeholder="Age" name="age" required>
+                </p>
+
+                <label><b>Height(in cm.)</b></label>
+                <p style="clear: left">
+                    <input type="number" placeholder="Height" name="Height" required>
+                </p>
+
+                <label><b>Description</b></label>
+                <textarea placeholder="Enter Desc." name="comments" row="3" maxlength="200" cols="60"></textarea>
+
+                <button type="submit">Save Changes</button>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+        </form>
+        </div>
+
+        <!--Account Preferences-->
+        <!-- The Modal -->
+        <div id="id03" class="modal">
+            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+            <!-- Modal Content -->
+            <form class="modal-content animate" action="/action_page.php">
+                <div class="container">
+                  <center>
+                      Preferences
+                  </center>
+                  <p style="clear: left">
+                      <hr>
+                  </p>
+
+                    <label><b>Max Age:</b></label>
+                    <p style="clear: left">
+                        <input type="number" placeholder="Max Height" name="maxHeight" min="18" max="120" step="1" required>
+                    </p>
+
+                    <label><b>Min Age</b></label>
+                    <p style="clear: left">
+                      <input type="number" placeholder="Min Height" name="minHeight" min="18" max="120" step="1" required>
+                    </p>
+
+                    <label><b>Max Height</b></label>
+                    <p style="clear: left">
+                        <input type="number" placeholder="Max Height" name="maxHeight" min="54" max="272" step="1" required>
+                    </p>
+
+                    <label><b>Min Height</b></label>
+                    <p style="clear: left">
+                        <input type="number" placeholder="Min Height" name="minHeight" min="54" max="272" step="1" required>
+                    </p>
+
+                    <button type="submit">Save Changes</button>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+            </form>
+            </div>
+
+        <!--Importing JS Script-->
+        <script type="text/javascript" src="../script.js"></script>
 </body>
 
 </html>
