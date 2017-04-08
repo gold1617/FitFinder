@@ -12,14 +12,14 @@
 
     <!--FitFinder-->
     <div class="logo">
-        <!--<img src="{{url_for('static', filename='images/FitFinderLogo.png')}}" width="30%" height="10%">-->
-        <img src="../static/images/FitFinderLogo.png" width="30%" height="15%" >
+        <img src="{{url_for('static', filename='images/FitFinderLogo.png')}}" width="30%" height="10%">
+        <!--<img src="../static/images/FitFinderLogo.png" width="30%" height="15%" >-->
     </div>
 
     <!---User Image + Dropdown-->
     <div class="dropdown">
-        <!--<img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="15%" height="5%" border: "3px solid white" >-->
-        <img src="../static/images/img_avatar2.png" width="10%" border-radius:"50%">
+        <img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="15%" height="5%" border: "3px solid white" >
+        <!--<img src="../static/images/img_avatar2.png" width="10%" border-radius:"50%">-->
         <div class="dropdown-content">
             <div class="dropdownLoggedIn">
                 <a onclick="document.getElementById('id02').style.display='block'">Account Info</a>
@@ -67,8 +67,9 @@
         <!-- Modal Content -->
         <form class="modal-content animate" action="/action_page.php">
             <div class="imgcontainer">
-                <center><!--<img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="20%" alt="Avatar class=""avatar>-->
-                  <img src="../static/images/img_avatar2.png" alt="Avatar" class="avatar" width=20%>
+                <center>
+                  <img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="20%" alt="Avatar" class="avatar">
+                  <!-- <img src="../static/images/img_avatar2.png" alt="Avatar" class="avatar" width=20%> -->
                 </center>
             </div>
 
@@ -172,7 +173,8 @@
             </div>
 
         <!--Importing JS Script-->
-        <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="../static/script.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 
 </html>
