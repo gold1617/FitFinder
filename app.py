@@ -22,6 +22,7 @@ db_session = scoped_session(sessionmaker(autocommit=False,autoflush=True,bind=en
 Base = declarative_base()
 Base.query = db_session.query_property()
 
+
 def init_db():
     Base.metadata.create_all(bind=engine)
 
@@ -68,6 +69,19 @@ def edit_profile():
     user.bio = request.form['bio'];
     db_session.commit();
     return index()
+
+nextbud = 2
+
+@app.route('/buddy')
+def buddy():
+    global nextbud
+    bud = User.query.filter_by(id=nextbud).first()
+    if(nextbud < 6):
+        nextbud += 1
+    else:
+        nextbud = 2
+
+    return jsonify(bud.as_dict())
 
 @app.route('/logout')
 def logout():

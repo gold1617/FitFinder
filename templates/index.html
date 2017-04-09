@@ -11,7 +11,7 @@
     <title>FitFinder</title>
 </head>
 
-<body>
+<body onload="getBuddy()" >
   <div class="header">
       <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
           <a class="pure-menu-heading" href="">FitFinder</a>
@@ -27,13 +27,13 @@
       <div class="splash">
 
         <center>
-        <img src="../static/images/Jason Smith.jpg" style.float="left" alt="Profile Pic" width="39%" height="89%">
+        <img src="{{ url_for('static', filename='images/img_avatar2.png')  }}" id="profpic" style.float="left" alt="Profile Pic" width="39%" height="89%">
         <!--Bio Box-->
-        <div class="biobox" style.float="right">
-
+        <div class="biobox" id="biobox" style.float="right">
         </div>
+        <br>
         <button class="button"><span>Message </span></button>
-        <button class="button"><span>Next </span></button>
+        <button class="button" onclick="getBuddy();"><span>Next </span></button>
       </div>
       </center>
   </div>

@@ -9,13 +9,9 @@ window.onclick = function(event) {
     }
 }
 
-function sendData (){
-
-}
 
 function getData(){
   $.get("/myprofile",function(data, status){
-      console.log(data.age);
     document.getElementById("age").value = Number(data.age);
     document.getElementById("height").value=data.height;
     document.getElementById("name").value=data.name;
@@ -26,4 +22,31 @@ function getData(){
 function accountInfo(){
     document.getElementById('id02').style.display='block';
     getData();
+}
+
+function getBuddy()
+{
+   $.get("/buddy",function(data, status){
+        var myNode = document.getElementById("biobox");
+        while (myNode.firstChild) {
+                myNode.removeChild(myNode.firstChild);
+        }
+        var text = document.createTextNode("Name: " + data.name);        
+        myNode.appendChild(text);
+        text = document.createElement("br");
+        myNode.appendChild(text);
+        text = document.createTextNode("Age: " + data.age);
+        myNode.appendChild(text);
+        text = document.createElement("br");
+        myNode.appendChild(text);
+        text = document.createTextNode("Height: " + data.height);
+        myNode.appendChild(text);
+        text = document.createElement("br");
+        myNode.appendChild(text);
+        text = document.createTextNode("Bio: " + data.bio);
+        myNode.appendChild(text);
+        
+        document.getElementById("profpic").setAttribute("src","static/images/"+data.name+".jpg");
+
+   });  
 }
