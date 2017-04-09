@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css')  }}" type="text/css">
-    <link rel="stylesheet" href="../static/css/layout.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/marketing.css')  }}" type="text/css">
-    <link rel="stylesheet" href="../static/css/marketing.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <title>FitFinder</title>
 </head>
@@ -73,21 +71,21 @@
                     <hr>
                 </p>
                 <label><b>Name(First Name Last Name)</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
+                <input type="text" placeholder="Enter Name" id="name" required>
 
                 <label><b>Age</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Age" name="age" required> years old
+                    <input type="number" placeholder="Age" id="age" required> years old
                 </p>
 
                 <label><b>Height(in cm.)</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Height" name="height" required> cm
+                    <input type="number" placeholder="Height" id="height" required> cm
                 </p>
 
                 <label><b>Description</b></label>
                 <p style="clear: left">
-                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" name="bio" row="3" maxlength="200" cols="60"></textarea>
+                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" id="bio" row="3" maxlength="200" cols="60"></textarea>
                 </p>
 
                 <p>
@@ -100,7 +98,6 @@
         </div>
 
         <!--Importing JS Script-->
-        <script type="text/javascript" src="../static/script.js"></script>
         <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 

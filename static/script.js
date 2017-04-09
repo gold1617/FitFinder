@@ -15,14 +15,15 @@ function sendData (){
 
 function getData(){
   $.get("/myprofile",function(data, status){
-    document.getElementByName("age").value=(data.age);
-    document.getElementByName("height").value=(data.height);
-    document.getElementByName("name").value=(data.name);
-    document.getElementByName("bio").value=(data.bio);
+      console.log(data.age);
+    document.getElementById("age").value = Number(data.age);
+    document.getElementById("height").value=data.height;
+    document.getElementById("name").value=data.name;
+    document.getElementById("bio").value=data.bio;
   });
 }
 
 function accountInfo(){
-  getData();
-  document.getElementById('id02').style.display='block';
+    document.getElementById('id02').style.display='block';
+    getData();
 }
