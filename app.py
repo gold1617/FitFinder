@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template,request,g,session,flash,redirect,url_for,abort
 from flask_openid import OpenID
 
@@ -32,30 +31,24 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(200))
     email = Column(String(200))
-    bio = Column(String(5000))
-    openid = Column(String(200))
+    bio = Column(String(250))
+    age = Column(Integer)
+    height = Column(Integer)
 
-    def __init__(self, name,email,bio,openid):
+    def __init__(self, name,email,bio,age,height):
 
         self.name = name
         self.bio = bio
-        self.openid = openid
+        self.age = age
         self.email = email
-
+        self.height = height
+        
  
-@app.before_request
-def before_request():
-    g.user = None
-    if 'openid' in session:
-        g.user = User.query.filter_by(openid=session['openid']).first()
-                        
-                        
-@app.after_request
-def after_request(response):
-    db_session.remove()
-    return response
-                                
 @app.route('/')
+def start():
+    return render_template('start.html')
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 
