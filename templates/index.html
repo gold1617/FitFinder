@@ -26,11 +26,17 @@
 
   <div class="splash-container">
       <div class="splash">
+
+        <center>
+        <img src="../static/images/Jason Smith.jpg" style.float="left" alt="Profile Pic" width="39%" height="89%">
         <!--Bio Box-->
-        <div class="biobox">
-            Fill Me!
+        <div class="biobox" style.float="right">
+
         </div>
+        <button class="button"><span>Message </span></button>
+        <button class="button"><span>Next </span></button>
       </div>
+      </center>
   </div>
 
   <div class="content-wrapper">
@@ -45,14 +51,6 @@
                   </h3>
                   <p>
                       Age,Height,and a small description of themselves and their healthy lifestyle they are trying to maintain ot start
-                  </p>
-              </div>
-              <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                  <h3 class="content-subhead">
-                      Wanna narrow down the people you see or see more like you?
-                  </h3>
-                  <p>
-                      Just go into account info and edit your preferences from there. Also edit your own details so peoplecan easily match up and message you.
                   </p>
               </div>
           </div>
@@ -92,35 +90,7 @@
                 </p>
 
                 <p>
-                    <center>
-                        Preferences for Matches
-                    </center>
-                </p>
-                <p style="clear: left">
-                    <hr>
-                </p>
-
-                <label><b>Max Age:</b></label>
-                <p style="clear: left">
-                    <input type="number" placeholder="Max Height" name="maxHeight" min="18" max="120" step="1" required> years old
-                </p>
-
-                <label><b>Min Age</b></label>
-                <p style="clear: left">
-                    <input type="number" placeholder="Min Height" name="minHeight" min="18" max="120" step="1" required> years old
-                </p>
-
-                <label><b>Max Height</b></label>
-                <p style="clear: left">
-                    <input type="number" placeholder="Max Height" name="maxHeight" min="54" max="272" step="1" required> cm
-                </p>
-
-                <label><b>Min Height</b></label>
-                <p style="clear: left">
-                    <input type="number" placeholder="Min Height" name="minHeight" min="54" max="272" step="1" required> cm
-                </p>
-
-                <a onclick=""><button type="submit">Save Changes</button></a>
+                <a onclick="sendData"><button type="submit">Save Changes</button></a>
 
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
