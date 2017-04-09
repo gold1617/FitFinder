@@ -1,6 +1,5 @@
-from flask import Flask, render_template,request,g,session,flash,redirect,url_for,abort
+from flask import Flask, render_template,request,g,session,flash,redirect,url_for,abort,jsonify
 from flask_openid import OpenID
-
 from openid.extensions import pape
 
 from sqlalchemy import create_engine, Column, Integer, String
@@ -43,7 +42,10 @@ class User(Base):
         self.email = email
         self.height = height
         
- 
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
+
 @app.route('/')
 def start():
     return render_template('start.html')
@@ -51,6 +53,11 @@ def start():
 @app.route('/index')
 def index():
     return render_template('index.html')
+
+@app.route('/myprofile')
+def myprofile():
+    me  = User.query.filter_by(id=1).first()
+    return jsonify(me.as_dict())
 
 @app.route('/profile',methods=['GET','POST'])
 def edit_profile():
