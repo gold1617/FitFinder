@@ -62,7 +62,7 @@
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 
         <!-- Modal Content -->
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate" action="/profile" method="Post">
             <div class="container">
                 <center>
                     Account Info
@@ -71,21 +71,21 @@
                     <hr>
                 </p>
                 <label><b>Name(First Name Last Name)</b></label>
-                <input type="text" placeholder="Enter Name" id="name" required>
+                <input type="text" placeholder="Enter Name" id="name" name="name" required>
 
                 <label><b>Age</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Age" id="age" required> years old
+                    <input type="number" placeholder="Age" id="age" name="age" required> years old
                 </p>
 
                 <label><b>Height(in cm.)</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Height" id="height" required> cm
+                    <input type="number" placeholder="Height" id="height" name="height" required> cm
                 </p>
 
                 <label><b>Description</b></label>
                 <p style="clear: left">
-                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" id="bio" row="3" maxlength="200" cols="60"></textarea>
+                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" id="bio" name = "bio" row="3" maxlength="200" cols="60"></textarea>
                 </p>
 
                 <p>

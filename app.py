@@ -59,31 +59,15 @@ def myprofile():
     me  = User.query.filter_by(id=1).first()
     return jsonify(me.as_dict())
 
-@app.route('/profile',methods=['GET','POST'])
+@app.route('/profile',methods=['POST'])
 def edit_profile():
-    if g.user is None:
-        abort(401)
-    form = dict(name=g.user.name,email=g.user.email)
-    if request.method == 'POST':
-        if 'delete' in request.form:
-            db_session.delete(g.user)
-            db_session.commit()
-            session['openid'] = None
-            flash(u'Profile deleted')
-            return redirect(url_for('index'))
-        form['name'] = request.form['name']
-        form['email'] = request.form['email']
-        if not form['name']:
-            flash(u'Error: you have to provide a name')
-        elif '@' not in form['email']:
-            flash(u'Error: you have to enter a valid email address')
-        else:
-            flash(u'Profile successfully created')
-            g.user.name = form['name']
-            g.user.email = form['email']
-            db_session.commit()
-            return redirect(url_for('edit_profile'))
-    return render_template('edit_profile.html', form=form)
+    user = User.query.filter_by(id=1).first();
+    user.name = request.form['name'];
+    user.age = request.form['age'];
+    user.height = request.form['height'];
+    user.bio = request.form['bio'];
+    db_session.commit();
+    return index()
 
 @app.route('/logout')
 def logout():
