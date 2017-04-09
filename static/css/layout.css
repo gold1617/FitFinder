@@ -1,21 +1,33 @@
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-
-/*Body Layout*/
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
 body {
-    /*background-color: black;*/
-    color: white;
+    line-height: 1.7em;
+    color: #7f8c8d;
+    font-size: 13px;
     font-style: italic;
     font-family: Helvetica;
-
-    background: #7BB4FE; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, #7BB4FE , #2C7DE8); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #7BB4FE, #2C7DE8); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #7BB4FE, #2C7DE8); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #7BB4FE, #2C7DE8); /* Standard syntax (must be last) */
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: #34495e;
+}
+
+
+
 
 /*Logo Style*/
 .logo {
