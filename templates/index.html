@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/css/layout.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/marketing.css')  }}" type="text/css">
     <link rel="stylesheet" href="../static/css/marketing.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <title>FitFinder</title>
 </head>
 
@@ -18,7 +19,7 @@
           <a class="pure-menu-heading" href="">FitFinder</a>
 
           <ul class="pure-menu-list">
-              <li class="pure-menu-item pure-menu-selected"><a onclick="document.getElementById('id02').style.display='block'" class="pure-menu-link">Account Info</a></li>
+              <li class="pure-menu-item pure-menu-selected"><a onclick="accountInfo()" class="pure-menu-link">Account Info</a></li>
               <li class="pure-menu-item"><a href="/logout" class="pure-menu-link">Sign Out</a></li>
           </ul>
       </div>
@@ -81,12 +82,12 @@
 
                 <label><b>Height(in cm.)</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Height" name="Height" required> cm
+                    <input type="number" placeholder="Height" name="height" required> cm
                 </p>
 
                 <label><b>Description</b></label>
                 <p style="clear: left">
-                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" name="comments" row="3" maxlength="200" cols="60"></textarea>
+                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" name="bio" row="3" maxlength="200" cols="60"></textarea>
                 </p>
 
                 <p>
