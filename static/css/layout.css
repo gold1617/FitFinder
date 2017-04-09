@@ -21,6 +21,14 @@ body {
 .logo {
   position: relative;
   display: inline-block;
+  float:right;
+}
+
+/*Logo Style*/
+.userIcon {
+  position: relative;
+  display: inline-block;
+  float:left;
 }
 
 /*Drop Down Menu*/
@@ -36,16 +44,7 @@ body {
 
 .dropdown {
     position: relative;
-    padding: 25px;
     display: inline-block;
-}
-
-.dropdownLoggedIn{
-  display: inline-block;
-}
-
-.dropdownLoggedOff{
-  display: none;
 }
 
 .dropdown-content {
@@ -71,7 +70,6 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-    right: 25px;
 }
 
 .dropdown:hover .dropbtn {
@@ -176,7 +174,7 @@ button:hover {
 
 
 img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
 }
 

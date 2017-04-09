@@ -12,28 +12,21 @@
 
     <!--FitFinder-->
     <div class="logo">
-        <img src="{{url_for('static', filename='images/FitFinderLogo.png')}}" width="30%" height="10%">
-        <!--<img src="../static/images/FitFinderLogo.png" width="30%" height="15%" >-->
+        <!-- <img src="{{url_for('static', filename='images/FitFinderLogo.png')}}" width="50%"> -->
+        <img src="../static/images/FitFinderLogo.png" width="50%">
     </div>
 
     <!---User Image + Dropdown-->
     <div class="dropdown">
-        <img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="15%" height="5%" border: "3px solid white" >
-        <!--<img src="../static/images/img_avatar2.png" width="10%" border-radius:"50%">-->
+       cv  <!-- <img src="{{url_for('static', filename='images/img_avatar2.png')}}" alt="Avatar" class="avatar"> -->
+        <center>
+            <img src="../static/images/img_avatar2.png" width="20%" alt="Avatar" class="avatar">
+        </center>
         <div class="dropdown-content">
-            <div class="dropdownLoggedIn">
-                <a onclick="document.getElementById('id02').style.display='block'">Account Info</a>
-                <a onclick="document.getElementById('id03').style.display='block'">Preferences</a>
-                <a onclick="document.getElementById('id01').style.display='block'">Log Out</a>
-            </div>
-            <div class="dropdownLoggedOff">
-                <a onclick="document.getElementById('id01').style.display='block'">Log In</a>
-            </div>
+            <a onclick="document.getElementById('id02').style.display='block'">Account Info</a>
+            <a onclick="front.html">Log Out</a>
         </div>
     </div>
-
-    <!--Caption Motto-->
-    <p align="left">The Perfect Fit To Get Fit</p>
 
     <!--Sectionalizing Top from Bodt-->
     <p style="clear: left">
@@ -60,37 +53,6 @@
         <hr>
     </p>
 
-    <!-- The Modal -->
-    <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-        <!-- Modal Content -->
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="imgcontainer">
-                <center>
-                  <img src="{{url_for('static', filename='images/img_avatar2.png')}}" width="20%" alt="Avatar" class="avatar">
-                  <!-- <img src="../static/images/img_avatar2.png" alt="Avatar" class="avatar" width=20%> -->
-                </center>
-            </div>
-
-            <div class="container">
-                <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-
-                <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <button type="submit">Login</button>
-                <input type="checkbox" checked="checked"> Remember me
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-        </form>
-    </div>
-
     <!--Account Info-->
     <!-- The Modal -->
     <div id="id02" class="modal">
@@ -99,29 +61,60 @@
         <!-- Modal Content -->
         <form class="modal-content animate" action="/action_page.php">
             <div class="container">
-              <center>
-                  Account Info
-              </center>
-              <p style="clear: left">
-                  <hr>
-              </p>
-                <label><b>Name</b></label>
+                <center>
+                    Account Info
+                </center>
+                <p style="clear: left">
+                    <hr>
+                </p>
+                <label><b>Name(First Name Last Name)</b></label>
                 <input type="text" placeholder="Enter Name" name="name" required>
 
                 <label><b>Age</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Age" name="age" required>
+                    <input type="number" placeholder="Age" name="age" required> years old
                 </p>
 
                 <label><b>Height(in cm.)</b></label>
                 <p style="clear: left">
-                    <input type="number" placeholder="Height" name="Height" required>
+                    <input type="number" placeholder="Height" name="Height" required> cm
                 </p>
 
                 <label><b>Description</b></label>
-                <textarea placeholder="Enter Desc." name="comments" row="3" maxlength="200" cols="60"></textarea>
+                <p style="clear: left">
+                    <textarea placeholder="Enter Description of yourself and your workout/dietary routine" name="comments" row="3" maxlength="200" cols="60"></textarea>
+                </p>
 
-                <button type="submit">Save Changes</button>
+                <p>
+                    <center>
+                        Preferences for Matches
+                    </center>
+                </p>
+                <p style="clear: left">
+                    <hr>
+                </p>
+
+                <label><b>Max Age:</b></label>
+                <p style="clear: left">
+                    <input type="number" placeholder="Max Height" name="maxHeight" min="18" max="120" step="1" required> years old
+                </p>
+
+                <label><b>Min Age</b></label>
+                <p style="clear: left">
+                    <input type="number" placeholder="Min Height" name="minHeight" min="18" max="120" step="1" required> years old
+                </p>
+
+                <label><b>Max Height</b></label>
+                <p style="clear: left">
+                    <input type="number" placeholder="Max Height" name="maxHeight" min="54" max="272" step="1" required> cm
+                </p>
+
+                <label><b>Min Height</b></label>
+                <p style="clear: left">
+                    <input type="number" placeholder="Min Height" name="minHeight" min="54" max="272" step="1" required> cm
+                </p>
+
+                <a onclick=""><button type="submit">Save Changes</button></a>
 
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
@@ -129,52 +122,9 @@
         </form>
         </div>
 
-        <!--Account Preferences-->
-        <!-- The Modal -->
-        <div id="id03" class="modal">
-            <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-            <!-- Modal Content -->
-            <form class="modal-content animate" action="/action_page.php">
-                <div class="container">
-                  <center>
-                      Preferences
-                  </center>
-                  <p style="clear: left">
-                      <hr>
-                  </p>
-
-                    <label><b>Max Age:</b></label>
-                    <p style="clear: left">
-                        <input type="number" placeholder="Max Height" name="maxHeight" min="18" max="120" step="1" required>
-                    </p>
-
-                    <label><b>Min Age</b></label>
-                    <p style="clear: left">
-                      <input type="number" placeholder="Min Height" name="minHeight" min="18" max="120" step="1" required>
-                    </p>
-
-                    <label><b>Max Height</b></label>
-                    <p style="clear: left">
-                        <input type="number" placeholder="Max Height" name="maxHeight" min="54" max="272" step="1" required>
-                    </p>
-
-                    <label><b>Min Height</b></label>
-                    <p style="clear: left">
-                        <input type="number" placeholder="Min Height" name="minHeight" min="54" max="272" step="1" required>
-                    </p>
-
-                    <button type="submit">Save Changes</button>
-
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-                    </div>
-            </form>
-            </div>
-
         <!--Importing JS Script-->
         <script type="text/javascript" src="../static/script.js"></script>
-        <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+        <script type="text/javascript" sgit rc="{{url_for('static', filename='script.js')}}"></script>
 </body>
 
 </html>
